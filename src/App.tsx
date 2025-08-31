@@ -3,7 +3,7 @@ import { Navigation, Header, About, WorkExperience, Education, Skills, Projects,
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#1C2135] text-white font-['Inter']">
+    <div className="min-h-screen bg-custom-light text-custom-text font-['Inter']">
       {/* Navigation Bar */}
       <Navigation />
       

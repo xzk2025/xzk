@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+                                                    import React, { useState, useEffect, useRef } from 'react';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const settingsRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
@@ -12,6 +13,31 @@ const Navigation: React.FC = () => {
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' }
   ];
+
+  // Scroll event listener for dynamic navigation behavior
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const threshold = 50; // 50px threshold
+      
+      if (scrollPosition > threshold) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial check in case page is loaded scrolled down
+    handleScroll();
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -55,7 +81,9 @@ const Navigation: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+      isScrolled ? 'glass-effect-nav' : 'nav-transparent'
+    }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -68,7 +96,7 @@ const Navigation: React.FC = () => {
               }}
               className="flex items-center space-x-2 group"
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-custom-accent to-custom-accent-secondary rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-sky-accent to-sky-accent-secondary rounded-lg flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-lg">K</span>
               </div>
               <span className="text-xl font-bold gradient-text group-hover:scale-105 transition-transform duration-300">
@@ -87,10 +115,18 @@ const Navigation: React.FC = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="text-custom-text-secondary hover:text-custom-text transition-colors duration-300 font-medium relative group"
+                className={`transition-colors duration-300 font-medium relative group nav-link ${
+                  isScrolled 
+                    ? 'text-sky-text hover:text-sky-accent' 
+                    : 'text-sky-text hover:text-sky-accent'
+                }`}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-custom-accent to-custom-accent-secondary transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                  isScrolled 
+                    ? 'bg-gradient-to-r from-sky-accent to-sky-accent-secondary' 
+                    : 'bg-gradient-to-r from-sky-accent to-sky-accent-secondary'
+                }`}></span>
               </a>
             ))}
           </div>
@@ -99,7 +135,11 @@ const Navigation: React.FC = () => {
           <div className="flex items-center space-x-4" ref={settingsRef}>
             <button
               onClick={() => setIsSettingsOpen(!isSettingsOpen)}
-              className="p-2 rounded-lg text-custom-text-secondary hover:text-custom-text hover:bg-gray-100 transition-all duration-300 group"
+              className={`p-2 rounded-lg transition-all duration-300 group nav-button ${
+                isScrolled 
+                  ? 'text-sky-text hover:text-sky-accent hover:bg-sky-accent/10' 
+                  : 'text-sky-text hover:text-sky-accent hover:bg-sky-accent/10'
+              }`}
               aria-label="Settings"
             >
               <svg 
@@ -126,7 +166,11 @@ const Navigation: React.FC = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-custom-text-secondary hover:text-custom-text hover:bg-gray-100 transition-all duration-300"
+              className={`md:hidden p-2 rounded-lg transition-all duration-300 nav-button ${
+                isScrolled 
+                  ? 'text-sky-text hover:text-sky-accent hover:bg-sky-accent/10' 
+                  : 'text-sky-text hover:text-sky-accent hover:bg-sky-accent/10'
+              }`}
               aria-label="Toggle menu"
             >
               <svg 
@@ -158,7 +202,7 @@ const Navigation: React.FC = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg mt-2 border border-gray-200 shadow-lg">
+            <div className="glass-effect-mobile-menu mt-2 rounded-xl border border-white/20 shadow-2xl">
               {navItems.map((item) => (
                 <a
                   key={item.name}
@@ -167,7 +211,7 @@ const Navigation: React.FC = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="block px-3 py-2 text-custom-text-secondary hover:text-custom-text hover:bg-gray-50 rounded-md transition-colors duration-300 font-medium"
+                  className="block px-4 py-3 text-sky-text-secondary hover:text-sky-text hover:bg-white/10 transition-colors duration-300 font-medium nav-link"
                 >
                   {item.name}
                 </a>
@@ -178,18 +222,18 @@ const Navigation: React.FC = () => {
 
         {/* Settings Dropdown */}
         {isSettingsOpen && (
-          <div className="absolute top-full right-4 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 backdrop-blur-md">
+          <div className="absolute top-full right-4 mt-2 w-48 glass-effect-dropdown rounded-xl shadow-2xl border border-white/20">
             <div className="py-2">
-              <div className="px-4 py-2 text-sm text-custom-text-muted border-b border-gray-100">
+              <div className="px-4 py-2 text-sm text-sky-text-muted border-b border-white/10">
                 Settings
               </div>
-              <button className="w-full text-left px-4 py-2 text-sm text-custom-text-secondary hover:text-custom-text hover:bg-gray-50 transition-colors duration-300">
+              <button className="w-full text-left px-4 py-2 text-sm text-sky-text-secondary hover:text-sky-text hover:bg-white/10 transition-colors duration-300 nav-link">
                 Theme
               </button>
-              <button className="w-full text-left px-4 py-2 text-sm text-custom-text-secondary hover:text-custom-text hover:bg-gray-50 transition-colors duration-300">
+              <button className="w-full text-left px-4 py-2 text-sm text-sky-text-secondary hover:text-sky-text hover:bg-white/10 transition-colors duration-300 nav-link">
                 Language
               </button>
-              <button className="w-full text-left px-4 py-2 text-sm text-custom-text-secondary hover:text-custom-text hover:bg-gray-50 transition-colors duration-300">
+              <button className="w-full text-left px-4 py-2 text-sm text-sky-text-secondary hover:text-sky-text hover:bg-white/10 transition-colors duration-300 nav-link">
                 Accessibility
               </button>
             </div>

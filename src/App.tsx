@@ -1,9 +1,9 @@
 import React from 'react';
-import { Navigation, Header, About, WorkExperience, Education, Skills, Projects, Contact } from './components';
+import { Navigation, Header, About, WorkExperience, Skills, Projects, Education, Contact } from './components';
 
 function App() {
   return (
-    <div className="min-h-screen bg-custom-light text-custom-text font-['Inter']">
+    <div className="min-h-screen bg-sky-light text-sky-text font-['Inter']">
       {/* Navigation Bar */}
       <Navigation />
       

@@ -50,6 +50,62 @@
 }
 
 @layer components {
+  /* Animation keyframes */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0.1;
+    }
+    25% {
+      transform: translateY(-20px) rotate(5deg);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(-10px) rotate(-5deg);
+      opacity: 0.15;
+    }
+    75% {
+      transform: translateY(-30px) rotate(3deg);
+      opacity: 0.25;
+    }
+  }
+
+  /* Animation classes */
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-float {
+    animation: float 15s ease-in-out infinite;
+  }
+
   /* Transparent Navigation Bar (Initial State) */
   .nav-transparent {
     background: transparent;
@@ -201,29 +257,5 @@
     background: linear-gradient(90deg, #3B82F6, #1E40AF);
     border-radius: 6px;
     transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  /* Floating animation for data elements */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-      opacity: 0.1;
-    }
-    25% {
-      transform: translateY(-20px) rotate(5deg);
-      opacity: 0.2;
-    }
-    50% {
-      transform: translateY(-10px) rotate(-5deg);
-      opacity: 0.15;
-    }
-    75% {
-      transform: translateY(-30px) rotate(3deg);
-      opacity: 0.25;
-    }
-  }
-  
-  .animate-float {
-    animation: float 15s ease-in-out infinite;
   }
 }

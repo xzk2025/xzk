@@ -37,7 +37,7 @@ const Header: React.FC = () => {
                 <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-r from-sky-accent via-purple-500 to-indigo-500 rounded-lg opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500 animate-spin" style={{animationDuration: '20s'}}></div>
                 
                 {/* Profile container */}
-                <div className="relative w-48 h-60 sm:w-64 sm:h-80 lg:w-80 lg:h-96 mx-auto lg:mx-0 rounded-lg">
+                <div className="relative w-40 h-50 sm:w-56 sm:h-70 lg:w-72 lg:h-90 mx-auto lg:mx-0 rounded-lg">
                   <img 
                     src="/xzk.png" 
                     alt="Khin Myo Hsak" 
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
                       target.nextElementSibling?.classList.remove('hidden');
                     }}
                   />
-                  <div className="hidden absolute inset-0 w-full h-full bg-gradient-to-br from-sky-accent via-purple-500 to-indigo-500 rounded-lg flex items-center justify-center text-2xl sm:text-4xl lg:text-6xl font-black text-white">
+                  <div className="hidden absolute inset-0 w-full h-full bg-gradient-to-br from-sky-accent via-purple-500 to-indigo-500 rounded-lg flex items-center justify-center text-xl sm:text-2xl lg:text-4xl font-black text-white">
                     KM
                   </div>
                   
@@ -58,15 +58,15 @@ const Header: React.FC = () => {
               
               {/* Name and Title - REDUCED FONT SIZE */}
               <div className="mb-6 sm:mb-8">
-                <h1 className="text-xl sm:text-2xl lg:text-4xl font-black mb-3 sm:mb-4 leading-tight">
+                <h1 className="text-lg sm:text-xl lg:text-3xl font-black mb-3 sm:mb-4 leading-tight">
                   <span className="bg-gradient-to-r from-sky-accent via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                     Khin Myo Hsak
                   </span>
                 </h1>
                 <h2 className="text-sm sm:text-base lg:text-lg text-sky-text-secondary font-light tracking-wide mb-2">
-                  <span className="text-sky-text-secondary">Billing IT Analyst</span>
+                  <span className="text-sky-text-secondary font-semibold">Billing IT Analyst</span>
                   <br />
-                  <span className="text-lg sm:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-sky-accent to-sky-accent-secondary bg-clip-text text-transparent">
+                  <span className="text-sky-text-secondary font-semibold">
                     Deputy Manager
                   </span>
                   <br />
@@ -105,7 +105,7 @@ const Header: React.FC = () => {
             </div>
 
                          {/* Right Column - About Me Section */}
-             <div className="text-left">
+             <div className="text-left -mt-4 sm:-mt-6 lg:-mt-8">
                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-sky-text mb-4 sm:mb-6">
                  About Me
                </h3>
@@ -115,9 +115,6 @@ const Header: React.FC = () => {
                  </p>
                  <p className="text-base sm:text-lg lg:text-xl text-sky-text-secondary leading-relaxed opacity-90 text-justify">
                    I'm proficient in Python, <span className="font-semibold bg-gradient-to-r from-sky-accent via-purple-600 to-indigo-600 bg-clip-text text-transparent">SQL</span>, and relational <span className="font-semibold bg-gradient-to-r from-sky-accent via-purple-600 to-indigo-600 bg-clip-text text-transparent">databases</span>, with hands-on skills in <span className="font-semibold bg-gradient-to-r from-sky-accent via-purple-600 to-indigo-600 bg-clip-text text-transparent">Power BI</span>, <span className="font-semibold bg-gradient-to-r from-sky-accent via-purple-600 to-indigo-600 bg-clip-text text-transparent">Power Query</span>, and Git. I'm a fast learner with a passion for problem-solving and a strong desire to master new technologies. My collaborative mindset and ability to work under pressure ensure I can deliver results in any dynamic environment.
-                 </p>
-                 <p className="text-base sm:text-lg lg:text-xl text-sky-text-secondary leading-relaxed opacity-90 text-justify">
-                   I'm currently open to new opportunities where I can apply my skills and continue to grow as a professional.
                  </p>
                </div>
               

@@ -35,20 +35,20 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="section-container py-16 mb-8 font-inter">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="section-container py-12 sm:py-16 mb-8 font-inter">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-sky-text mb-4">Get In Touch</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-sky-accent to-sky-accent-secondary mx-auto rounded-full"></div>
-            <p className="text-sky-text-secondary mt-4 max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-sky-text mb-4">Get In Touch</h2>
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-sky-accent to-sky-accent-secondary mx-auto rounded-full"></div>
+            <p className="text-sky-text-secondary mt-4 max-w-2xl mx-auto text-sm sm:text-base">
               I'm always interested in new opportunities and exciting projects. 
               Let's discuss how I can help bring your ideas to life.
             </p>
           </div>
           
           {/* Two-Column Layout */}
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Contact Information - Left Column */}
             <div className="modern-card p-8">
               <div className="text-center lg:text-left mb-8">

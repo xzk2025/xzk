@@ -180,6 +180,31 @@
       0 4px 6px -2px rgba(0, 0, 0, 0.05);
     border-color: #CBD5E1;
   }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    .modern-card {
+      border-radius: 12px;
+      margin: 0 4px;
+    }
+    
+    .section-container {
+      border-radius: 16px;
+      margin: 0 4px;
+    }
+  }
+
+  /* Touch-friendly button improvements */
+  @media (max-width: 640px) {
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    input, textarea {
+      min-height: 44px;
+    }
+  }
   
   /* Enhanced section styling */
   .section-container {

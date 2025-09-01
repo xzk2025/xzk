@@ -37,30 +37,30 @@ const Skills: React.FC = () => {
   const technicalSkills = skills.filter(skill => skill.category === "Technical Skills");
 
   return (
-    <section id="skills" className="section-container py-16 mb-8 font-inter">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="section-container py-12 sm:py-16 mb-8 font-inter">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-sky-text mb-4">Skills & Expertise</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-sky-accent to-sky-accent-secondary mx-auto rounded-full"></div>
-            <p className="text-sky-text-secondary mt-4 max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-sky-text mb-4">Skills & Expertise</h2>
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-sky-accent to-sky-accent-secondary mx-auto rounded-full"></div>
+            <p className="text-sky-text-secondary mt-4 max-w-2xl mx-auto text-sm sm:text-base">
               A comprehensive overview of my technical skills and expertise across data analysis, 
               programming, and development technologies.
             </p>
           </div>
           
           {/* Technical Skills Layout */}
-          <div className="mb-12">
-            <div className="modern-card p-8">
-              <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-sky-accent to-sky-accent-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">💻</span>
+          <div className="mb-8 sm:mb-12">
+            <div className="modern-card p-4 sm:p-6 lg:p-8">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-sky-accent to-sky-accent-secondary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <span className="text-2xl sm:text-3xl">💻</span>
                 </div>
-                <h3 className="text-2xl font-bold text-sky-text mb-2">Technical Skills</h3>
-                <p className="text-sky-text-muted">Core technical competencies and tools</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-sky-text mb-2">Technical Skills</h3>
+                <p className="text-sky-text-muted text-sm sm:text-base">Core technical competencies and tools</p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {technicalSkills.map((skill) => (
                   <div key={skill.name} className="flex items-center justify-between p-4 bg-sky-lighter rounded-lg border border-sky-border-light hover:border-sky-border transition-all duration-300">
                     <div className="flex items-center space-x-3">

@@ -72,27 +72,27 @@ const WorkExperience: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="section-container py-16 mb-8 font-inter">
-      <div className="container mx-auto px-6">
+    <section id="experience" className="section-container py-12 sm:py-16 mb-8 font-inter">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-sky-text mb-4">Work Experience</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-sky-accent to-sky-accent-secondary mx-auto rounded-full"></div>
-            <p className="text-sky-text-secondary mt-4 max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-sky-text mb-4">Work Experience</h2>
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-sky-accent to-sky-accent-secondary mx-auto rounded-full"></div>
+            <p className="text-sky-text-secondary mt-4 max-w-2xl mx-auto text-sm sm:text-base">
               Professional experience in data analysis, reporting, and IT support across telecom, 
               international organizations, and various technologies.
             </p>
           </div>
           
           {/* Work Experience Cards */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {experiences.map((experience, index) => (
               <div key={experience.id} className="modern-card group">
-                <div className="p-8">
+                <div className="p-4 sm:p-6 lg:p-8">
                   {/* Header Section */}
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
-                    <div className="mb-4 lg:mb-0">
-                      <h3 className="text-2xl font-bold text-sky-text mb-2 group-hover:text-sky-accent transition-colors duration-300">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-6">
+                    <div className="mb-3 sm:mb-4 lg:mb-0">
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-sky-text mb-2 group-hover:text-sky-accent transition-colors duration-300">
                         {index === 0 ? (
                           <>
                             <span className="text-sky-text">Billing IT Analyst</span>
@@ -105,24 +105,28 @@ const WorkExperience: React.FC = () => {
                           experience.position
                         )}
                       </h3>
-                      <p className="text-xl gradient-text-secondary font-semibold mb-1">
+                      <p className="text-lg sm:text-xl gradient-text-secondary font-semibold mb-1">
                         {experience.company}
                       </p>
-                      <div className="flex items-center text-sky-text-muted text-sm">
-                        <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                        </svg>
-                        <span className="mr-4">{experience.duration}</span>
-                        <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                        </svg>
-                        <span>{experience.location}</span>
+                      <div className="flex flex-col sm:flex-row sm:items-center text-sky-text-muted text-xs sm:text-sm">
+                        <div className="flex items-center mb-1 sm:mb-0">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                          </svg>
+                          <span className="mr-2 sm:mr-4">{experience.duration}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                          </svg>
+                          <span>{experience.location}</span>
+                        </div>
                       </div>
                     </div>
                     
                     {/* Experience Badge */}
                     <div className="flex-shrink-0">
-                      <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-sky-accent to-sky-accent-secondary text-white">
+                      <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-sky-accent to-sky-accent-secondary text-white">
                         {index === 0 ? 'Current' : 'Previous'}
                       </span>
                     </div>

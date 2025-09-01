@@ -72,21 +72,21 @@ const Education: React.FC = () => {
   ];
 
   return (
-    <section id="education" className="section-container py-16 mb-8 font-inter">
-      <div className="container mx-auto px-6">
+    <section id="education" className="section-container py-12 sm:py-16 mb-8 font-inter">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-sky-text mb-4">Education</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-sky-accent to-sky-accent-secondary mx-auto rounded-full"></div>
-            <p className="text-sky-text-secondary mt-4 max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-sky-text mb-4">Education</h2>
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-sky-accent to-sky-accent-secondary mx-auto rounded-full"></div>
+            <p className="text-sky-text-secondary mt-4 max-w-2xl mx-auto text-sm sm:text-base">
               Educational background combining electronics engineering with specialized training in business intelligence, 
               data analysis, and MEAL methodologies for comprehensive technical and analytical expertise.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {education.map((edu) => (
-              <div key={edu.id} className="modern-card p-8">
+              <div key={edu.id} className="modern-card p-4 sm:p-6 lg:p-8">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-semibold text-sky-text mb-2">{edu.degree}</h3>

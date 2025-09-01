@@ -37,7 +37,7 @@ const Header: React.FC = () => {
                 <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-r from-sky-accent via-purple-500 to-indigo-500 rounded-lg opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500 animate-spin" style={{animationDuration: '20s'}}></div>
                 
                 {/* Profile container */}
-                <div className="relative w-40 h-50 sm:w-56 sm:h-70 lg:w-72 lg:h-90 mx-auto lg:mx-0 rounded-lg">
+                <div className="relative w-48 h-60 sm:w-64 sm:h-80 lg:w-80 lg:h-96 mx-auto lg:mx-0 rounded-lg">
                   <img 
                     src="/xzk.png" 
                     alt="Khin Myo Hsak" 

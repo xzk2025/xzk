@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 interface Education {
   id: number;
@@ -15,33 +15,59 @@ const Education: React.FC = () => {
   const education: Education[] = [
     {
       id: 1,
-      degree: "Master of Science in Data Analytics",
-      institution: "University of California, Berkeley",
-      duration: "2018 - 2020",
-      location: "Berkeley, CA",
-      description: "Specialized in data analytics, business intelligence, and statistical analysis with focus on practical applications in business environments.",
+      degree: "BE- Bachelor of Engineering (Electronics)",
+      institution: "Technological University (Sittwe)",
+      duration: "2014 - 2018",
+      location: "Sittwe, Myanmar",
+      description: "Comprehensive study of electronics engineering with focus on electronic systems, circuits, and engineering principles.",
       achievements: [
-        "Graduated with Distinction",
-        "Research Assistant in Data Analytics Lab",
-        "Published research on business intelligence automation",
-        "Teaching Assistant for Data Analysis Methods"
-      ],
-      gpa: "3.9/4.0"
+        "Core electronics engineering curriculum",
+        "Practical laboratory experience",
+        "Engineering project work",
+        "Technical problem-solving skills"
+      ]
     },
     {
       id: 2,
-      degree: "Bachelor of Science in Business Analytics",
-      institution: "San Francisco State University",
-      duration: "2014 - 2018",
-      location: "San Francisco, CA",
-      description: "Comprehensive study of business analytics, statistics, and information systems with emphasis on data-driven decision making.",
+      degree: "Diploma of Business Intelligence and Data Analysis",
+      institution: "Matrix Institute",
+      duration: "2022 - 2023",
+      location: "Myanmar",
+      description: "Specialized training in business intelligence, data analysis techniques, and data-driven decision making methodologies.",
       achievements: [
-        "Dean's List (All Semesters)",
-        "Business Analytics Honor Society",
-        "Capstone Project: Automated Reporting System",
-        "Internship at Data Analytics Firm"
-      ],
-      gpa: "3.8/4.0"
+        "Business intelligence fundamentals",
+        "Data analysis methodologies",
+        "Reporting and visualization skills",
+        "Practical data analysis projects"
+      ]
+    },
+    {
+      id: 3,
+      degree: "Certificate of Completion Data Analyst Course",
+      institution: "Techland",
+      duration: "2023",
+      location: "Myanmar",
+      description: "Comprehensive data analyst training covering data manipulation, analysis tools, and practical applications.",
+      achievements: [
+        "Data analysis tools and techniques",
+        "Statistical analysis methods",
+        "Data visualization skills",
+        "Real-world project experience"
+      ]
+    },
+    {
+      id: 4,
+      degree: "Certificate of MEAL",
+      institution: "The Kap",
+      duration: "2023",
+      location: "Myanmar",
+      description: "Monitoring, Evaluation, Accountability, and Learning (MEAL) certification for development and humanitarian work.",
+      achievements: [
+        "MEAL framework and methodologies",
+        "Data collection and analysis",
+        "Monitoring and evaluation techniques",
+        "Learning and accountability practices"
+      ]
     }
   ];
 
@@ -53,8 +79,8 @@ const Education: React.FC = () => {
             <h2 className="text-4xl font-bold text-sky-text mb-4">Education</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-sky-accent to-sky-accent-secondary mx-auto rounded-full"></div>
             <p className="text-sky-text-secondary mt-4 max-w-2xl mx-auto">
-              Academic background focused on data analytics, business intelligence, and statistical analysis 
-              to support data-driven decision making.
+              Educational background combining electronics engineering with specialized training in business intelligence, 
+              data analysis, and MEAL methodologies for comprehensive technical and analytical expertise.
             </p>
           </div>
           
@@ -116,25 +142,25 @@ const Education: React.FC = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-sky-accent to-sky-accent-secondary rounded-full flex items-center justify-center mx-auto mb-2">
                     <span className="text-2xl">📊</span>
                   </div>
-                  <p className="text-sm font-medium text-sky-text-secondary">Microsoft Power BI</p>
+                  <p className="text-sm font-medium text-sky-text-secondary">Business Intelligence</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-2">
                     <span className="text-2xl">📈</span>
                   </div>
-                  <p className="text-sm font-medium text-sky-text-secondary">Excel Expert</p>
+                  <p className="text-sm font-medium text-sky-text-secondary">Data Analysis</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-sky-accent-secondary to-pink-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-2xl">🐍</span>
+                    <span className="text-2xl">🔍</span>
                   </div>
-                  <p className="text-sm font-medium text-sky-text-secondary">Python Data Analysis</p>
+                  <p className="text-sm font-medium text-sky-text-secondary">MEAL</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-2xl">💼</span>
+                    <span className="text-2xl">⚡</span>
                   </div>
-                  <p className="text-sm font-medium text-sky-text-secondary">Business Analytics</p>
+                  <p className="text-sm font-medium text-sky-text-secondary">Electronics</p>
                 </div>
               </div>
             </div>

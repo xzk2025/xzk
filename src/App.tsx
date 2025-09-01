@@ -1,5 +1,4 @@
-import React from 'react';
-import { Navigation, Header, About, WorkExperience, Skills, Education, Contact } from './components';
+import { Navigation, Header, WorkExperience, Skills, Education, Contact } from './components';
 
 function App() {
   return (
@@ -12,11 +11,6 @@ function App() {
         {/* Header Section */}
         <div className="py-4 sm:py-6 lg:py-8">
           <Header />
-        </div>
-        
-        {/* About Section */}
-        <div className="py-4 sm:py-6 lg:py-8">
-          <About />
         </div>
         
         {/* Work Experience Section */}

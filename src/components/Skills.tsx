@@ -9,23 +9,15 @@ interface Skill {
 
 const Skills: React.FC = () => {
   const skills: Skill[] = [
-    // Data Analysis Tools
-    { name: "Advanced Excel", icon: "📊", category: "Data Analysis Tools", level: 95 },
-    { name: "Power BI", icon: "📈", category: "Data Analysis Tools", level: 85 },
-    { name: "Power Query", icon: "🔍", category: "Data Analysis Tools", level: 88 },
-    { name: "Macro VBA", icon: "⚙️", category: "Data Analysis Tools", level: 90 },
-    { name: "Dynamics 365", icon: "🏢", category: "Data Analysis Tools", level: 85 },
-    { name: "Outlook", icon: "📧", category: "Data Analysis Tools", level: 90 },
-    
-    // Programming & Databases
-    { name: "Python", icon: "🐍", category: "Programming & Databases", level: 80 },
-    { name: "SQL", icon: "🗄️", category: "Programming & Databases", level: 85 },
-    { name: "React", icon: "⚛️", category: "Programming & Databases", level: 85 },
-    { name: "TypeScript", icon: "📘", category: "Programming & Databases", level: 80 },
-    { name: "JavaScript", icon: "💛", category: "Programming & Databases", level: 85 },
-    { name: "HTML/CSS", icon: "🌐", category: "Programming & Databases", level: 90 },
-    { name: "Tailwind CSS", icon: "🎨", category: "Programming & Databases", level: 85 },
-    { name: "Node.js", icon: "🟢", category: "Programming & Databases", level: 80 }
+    // Technical Skills
+    { name: "Advanced Excel", icon: "📊", category: "Technical Skills", level: 95 },
+    { name: "Macro VBA", icon: "⚙️", category: "Technical Skills", level: 90 },
+    { name: "Power BI", icon: "📈", category: "Technical Skills", level: 85 },
+    { name: "Power Query", icon: "🔍", category: "Technical Skills", level: 88 },
+    { name: "Outlook", icon: "📧", category: "Technical Skills", level: 90 },
+    { name: "Dynamics 365 Business Central", icon: "🏢", category: "Technical Skills", level: 85 },
+    { name: "Python", icon: "🐍", category: "Technical Skills", level: 80 },
+    { name: "SQL", icon: "🗄️", category: "Technical Skills", level: 85 }
   ];
 
   const getSkillLevelColor = (level: number) => {
@@ -42,8 +34,7 @@ const Skills: React.FC = () => {
     return "Beginner";
   };
 
-  const dataAnalysisSkills = skills.filter(skill => skill.category === "Data Analysis Tools");
-  const programmingSkills = skills.filter(skill => skill.category === "Programming & Databases");
+  const technicalSkills = skills.filter(skill => skill.category === "Technical Skills");
 
   return (
     <section id="skills" className="section-container py-16 mb-8 font-inter">
@@ -58,61 +49,22 @@ const Skills: React.FC = () => {
             </p>
           </div>
           
-          {/* Two-Column Skills Layout */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
-            {/* Data Analysis Tools Column */}
+          {/* Technical Skills Layout */}
+          <div className="mb-12">
             <div className="modern-card p-8">
               <div className="text-center mb-8">
                 <div className="w-16 h-16 bg-gradient-to-br from-sky-accent to-sky-accent-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">📊</span>
+                  <span className="text-3xl">💻</span>
                 </div>
-                <h3 className="text-2xl font-bold text-sky-text mb-2">Data Analysis Tools</h3>
-                <p className="text-sky-text-muted">Business intelligence and data processing tools</p>
+                <h3 className="text-2xl font-bold text-sky-text mb-2">Technical Skills</h3>
+                <p className="text-sky-text-muted">Core technical competencies and tools</p>
               </div>
               
-              <div className="space-y-4">
-                {dataAnalysisSkills.map((skill) => (
+              <div className="grid md:grid-cols-2 gap-4">
+                {technicalSkills.map((skill) => (
                   <div key={skill.name} className="flex items-center justify-between p-4 bg-sky-lighter rounded-lg border border-sky-border-light hover:border-sky-border transition-all duration-300">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-sky-accent/20 to-sky-accent-secondary/20 rounded-lg flex items-center justify-center">
-                        <span className="text-xl">{skill.icon}</span>
-                      </div>
-                      <div>
-                        <h4 className="text-sky-text font-medium">{skill.name}</h4>
-                        <p className="text-sky-text-muted text-sm">{getSkillLevelText(skill.level)}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-20 h-2 bg-sky-border rounded-full overflow-hidden">
-                        <div 
-                          className={`h-full bg-gradient-to-r ${getSkillLevelColor(skill.level)} rounded-full transition-all duration-1000`}
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                      <span className="text-sky-text-muted text-sm font-medium w-8 text-right">
-                        {skill.level}%
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Programming & Databases Column */}
-            <div className="modern-card p-8">
-              <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">💻</span>
-                </div>
-                <h3 className="text-2xl font-bold text-sky-text mb-2">Programming & Databases</h3>
-                <p className="text-sky-text-muted">Development languages and database technologies</p>
-              </div>
-              
-              <div className="space-y-4">
-                {programmingSkills.map((skill) => (
-                  <div key={skill.name} className="flex items-center justify-between p-4 bg-sky-lighter rounded-lg border border-sky-border-light hover:border-sky-border transition-all duration-300">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg flex items-center justify-center">
                         <span className="text-xl">{skill.icon}</span>
                       </div>
                       <div>
@@ -155,8 +107,8 @@ const Skills: React.FC = () => {
                   <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h4 className="text-lg font-semibold text-sky-text mb-2">Programming</h4>
-              <p className="text-sky-text-muted text-sm">Full-stack development skills</p>
+              <h4 className="text-lg font-semibold text-sky-text mb-2">Technical Skills</h4>
+              <p className="text-sky-text-muted text-sm">Core competencies and tools</p>
             </div>
             
             <div className="modern-card p-6 text-center">
@@ -165,35 +117,55 @@ const Skills: React.FC = () => {
                   <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h4 className="text-lg font-semibold text-sky-text mb-2">Automation</h4>
-              <p className="text-sky-text-muted text-sm">Process optimization and efficiency</p>
+              <h4 className="text-lg font-semibold text-sky-text mb-2">Career Development</h4>
+              <p className="text-sky-text-muted text-sm">Continuous learning and growth</p>
             </div>
           </div>
           
-          {/* Learning Section */}
+          {/* Career Development Section */}
           <div className="modern-card p-8">
-            <h3 className="text-2xl font-bold text-sky-text text-center mb-8">Currently Learning</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🤖</span>
+            <h3 className="text-2xl font-bold text-sky-text text-center mb-8">Career Development Focus</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <h4 className="text-lg font-semibold text-sky-text mb-4">Currently Enhancing Skills In:</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 bg-gradient-to-r from-sky-accent to-sky-accent-secondary rounded-full mr-3"></div>
+                    <span className="text-sky-text-secondary">Python</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 bg-gradient-to-r from-sky-accent to-sky-accent-secondary rounded-full mr-3"></div>
+                    <span className="text-sky-text-secondary">Advanced Power BI</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 bg-gradient-to-r from-sky-accent to-sky-accent-secondary rounded-full mr-3"></div>
+                    <span className="text-sky-text-secondary">SQL</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 bg-gradient-to-r from-sky-accent to-sky-accent-secondary rounded-full mr-3"></div>
+                    <span className="text-sky-text-secondary">Statistics</span>
+                  </div>
                 </div>
-                <h4 className="text-lg font-semibold text-sky-text mb-2">Machine Learning & AI</h4>
-                <p className="text-sky-text-muted text-sm">Advanced analytics and automation</p>
+                <p className="text-sky-text-muted text-sm mt-4">
+                  Preparing for a career in Data Engineering with focus on data manipulation, ETL workflows, and building scalable data solutions.
+                </p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-sky-accent-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">☁️</span>
+              
+              <div className="space-y-4">
+                <h4 className="text-lg font-semibold text-sky-text mb-4">Soft Skills & Attributes:</h4>
+                <div className="grid grid-cols-2 gap-2">
+                  <span className="skill-badge text-center text-sm">Teamwork</span>
+                  <span className="skill-badge text-center text-sm">Problem Solving</span>
+                  <span className="skill-badge text-center text-sm">Time Management</span>
+                  <span className="skill-badge text-center text-sm">Can Work Under Pressure</span>
+                  <span className="skill-badge text-center text-sm">Good Presentation</span>
+                  <span className="skill-badge text-center text-sm">Independent, Flexible</span>
+                  <span className="skill-badge text-center text-sm">Positive Attitude</span>
+                  <span className="skill-badge text-center text-sm">Strong Desire to Learn</span>
                 </div>
-                <h4 className="text-lg font-semibold text-sky-text mb-2">Cloud Computing</h4>
-                <p className="text-sky-text-muted text-sm">AWS, Azure, and cloud platforms</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">📊</span>
-                </div>
-                <h4 className="text-lg font-semibold text-sky-text mb-2">Advanced Visualization</h4>
-                <p className="text-sky-text-muted text-sm">Interactive dashboards and charts</p>
+                <p className="text-sky-text-muted text-sm mt-4">
+                  Actively engaged in hands-on projects and structured learning to strengthen real-world problem-solving and technical proficiency.
+                </p>
               </div>
             </div>
           </div>

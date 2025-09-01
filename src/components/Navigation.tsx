@@ -41,7 +41,14 @@ const Navigation: React.FC = () => {
     setActiveHref(href);
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navHeight = 64; // Height of the fixed navigation bar (h-16 = 64px)
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navHeight - 20; // Additional 20px spacing
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
     setIsMenuOpen(false);
   };

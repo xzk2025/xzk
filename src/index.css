@@ -216,6 +216,11 @@
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
   
+  /* Ensure proper spacing for home section when navigating */
+  #home {
+    scroll-margin-top: 84px; /* Navigation height (64px) + additional spacing (20px) */
+  }
+  
   /* Gradient text effects */
   .gradient-text {
     background: linear-gradient(135deg, #3B82F6, #1E40AF);

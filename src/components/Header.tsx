@@ -66,7 +66,7 @@ const Header: React.FC = () => {
                 <h2 className="text-sm sm:text-base lg:text-lg text-sky-text-secondary font-light tracking-wide mb-2">
                   <span className="text-sky-text-secondary font-semibold">Billing IT Analyst</span>
                   <br />
-                  <span className="text-sky-text-secondary font-semibold">
+                  <span className="bg-gradient-to-r from-sky-accent via-purple-600 to-indigo-600 bg-clip-text text-transparent font-bold">
                     Deputy Manager
                   </span>
                   <br />

@@ -227,30 +227,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
           
-          {/* Call to Action */}
-          <div className="mt-12 text-center">
-            <div className="modern-card p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-sky-text mb-4">Ready to Start a Project?</h3>
-              <p className="text-sky-text-secondary mb-6">
-                Whether you need data analysis, automation solutions, or web development, 
-                I'm here to help bring your ideas to life.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="mailto:khinmyohsak.btd@gmail.com" 
-                  className="modern-button bg-gradient-to-r from-sky-accent to-sky-accent-secondary text-white px-8 py-3 rounded-lg transition-all duration-300 font-semibold hover:scale-105 transform inline-block"
-                >
-                  Let's Work Together
-                </a>
-                <a 
-                  href="#projects" 
-                  className="modern-button bg-sky-lighter hover:bg-sky-soft text-sky-text px-8 py-3 rounded-lg transition-all duration-300 font-semibold hover:scale-105 transform inline-block border border-sky-border"
-                >
-                  View My Work
-                </a>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>

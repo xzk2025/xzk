@@ -14,48 +14,60 @@ const WorkExperience: React.FC = () => {
   const experiences: WorkExperience[] = [
     {
       id: 1,
-      company: "Data Analytics Solutions Inc.",
-      position: "Senior Data Analyst",
-      duration: "2022 - Present",
-      location: "San Francisco, CA",
+      company: "MPT Myanmar Co., Ltd",
+      position: "Billing IT Analyst",
+      duration: "Aug 2025 - Current",
+      location: "Myanmar",
       description: [
-        "Managed 27 IP reports and 15+ monthly reports, ensuring timely delivery and accuracy",
-        "Automated reporting processes with VBA, Python, Power Query, and Power BI, reducing manual work by 60%",
-        "Led data analysis projects using Advanced Excel, Power BI, and SQL to generate actionable insights",
-        "Collaborated with cross-functional teams to deliver data-driven recommendations for business decisions",
-        "Mentored junior analysts and conducted training sessions on data analysis best practices"
+        "Support sim operation",
+        "Handle operation requirements, functional issues, system issue, customer complaint",
+        "Provide the data, information, reports",
+        "Support testing process for issues or need"
       ],
-      technologies: ["Advanced Excel", "Power BI", "SQL", "Macro VBA", "Power Query", "Python"]
+      technologies: ["IT Support", "System Operations", "Customer Support", "Testing", "Reporting"]
     },
     {
       id: 2,
-      company: "Business Intelligence Corp",
-      position: "Data Analyst",
-      duration: "2020 - 2022",
-      location: "New York, NY",
+      company: "ZTE Myanmar Co., Ltd",
+      position: "Data Analysis & Reporting Engineer",
+      duration: "April 2024 - May 2025",
+      location: "Myanmar",
       description: [
-        "Analyzed large datasets using Excel and Power BI to create comprehensive business reports",
-        "Built interactive dashboards and visualizations for executive presentations",
-        "Automated data processing workflows using VBA macros and Power Query",
-        "Worked with Dynamics 365 Business Central for ERP data analysis and reporting",
-        "Developed standardized reporting templates that improved team efficiency by 40%"
+        "Managed 27 IP reports in the TX domain, ensuring timely and accurate data delivery across multiple cycles",
+        "Developed ETL pipelines to extract, clean, and transform data from diverse telecom sources",
+        "Automated reporting processes with VBA, Python, Power Query, and Power BI, cutting manual effort by 60%",
+        "Created and maintained Power BI dashboards to support business KPIs and decision-making",
+        "Collaborated with technical teams to track network upgrades and ensure data accuracy",
+        "Adapted data solutions based on customer requirements, enhancing flexibility and responsiveness"
       ],
-      technologies: ["Excel", "Power BI", "VBA", "Power Query", "Dynamics 365", "SQL"]
+      technologies: ["VBA", "Python", "Power Query", "Power BI", "ETL Pipelines", "Data Analysis"]
     },
     {
       id: 3,
-      company: "Tech Startup Analytics",
-      position: "Junior Data Analyst",
-      duration: "2019 - 2020",
-      location: "Austin, TX",
+      company: "Telecom International Myanmar Head of Office Co.Ltd",
+      position: "M&E Reporting Engineer",
+      duration: "Nov 2022 - April 2024",
+      location: "Myanmar",
       description: [
-        "Assisted in data collection, cleaning, and analysis using Excel and SQL",
-        "Created basic reports and visualizations for stakeholders",
-        "Learned advanced Excel functions and Power BI dashboard creation",
-        "Participated in data analysis projects and team meetings",
-        "Supported senior analysts in report generation and data validation"
+        "Analyzed and maintained key data sets using Excel, Python, and other tools to support strategic decisions",
+        "Created and presented accurate reports to senior leadership using Excel and data analysis tools",
+        "Collaborated with teams and 18 branches to align goals, conduct planning, and improve performance",
+        "Delivered insights and proposals to C-level executives based on nationwide site surveys"
       ],
-      technologies: ["Excel", "SQL", "Power BI", "Python", "Basic VBA"]
+      technologies: ["Excel", "Python", "Data Analysis", "Reporting", "Strategic Planning"]
+    },
+    {
+      id: 4,
+      company: "CFSI (INGO)",
+      position: "Data Assistant",
+      duration: "Aug 2022 - Oct 2022",
+      location: "Myanmar",
+      description: [
+        "Supported child protection case management and field coordination, using Excel and data tools for tracking and reporting",
+        "Delivered trainings on PSEA, MHPSS, and EORE; collected and analyzed field data to support community outreach",
+        "Managed expense reporting and compiled activity reports to support timely decisions and program effectiveness"
+      ],
+      technologies: ["Excel", "Data Tools", "Case Management", "Training", "Reporting"]
     }
   ];
 
@@ -67,8 +79,8 @@ const WorkExperience: React.FC = () => {
             <h2 className="text-4xl font-bold text-sky-text mb-4">Work Experience</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-sky-accent to-sky-accent-secondary mx-auto rounded-full"></div>
             <p className="text-sky-text-secondary mt-4 max-w-2xl mx-auto">
-              Professional experience in data analysis, business intelligence, and process automation 
-              across various industries and technologies.
+              Professional experience in data analysis, reporting, and IT support across telecom, 
+              international organizations, and various technologies.
             </p>
           </div>
           

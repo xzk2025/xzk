@@ -93,19 +93,19 @@ const Header: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column - About Me Section */}
-            <div className="text-left">
-              <h3 className="text-3xl lg:text-4xl font-bold text-sky-text mb-6">
-                About Me
-              </h3>
-              <div className="space-y-4 mb-8">
-                <p className="text-lg lg:text-xl text-sky-text-secondary leading-relaxed opacity-90">
-                  Enthusiastic and detail-oriented Data Analyst with ~2 years of experience in building data pipelines, automating ETL processes, and developing insightful reports.
-                </p>
-                <p className="text-lg lg:text-xl text-sky-text-secondary leading-relaxed opacity-90">
-                  Proficient in Python, SQL, and relational databases, with hands-on expertise in Power BI, Power Query, and Git. Familiar with AWS and well-versed in data structures, algorithms, and database design. Fast learner with strong analytical skills and a collaborative mindset, passionate about transforming raw data into actionable insights.
-                </p>
-              </div>
+                         {/* Right Column - About Me Section */}
+             <div className="text-left">
+               <h3 className="text-3xl lg:text-4xl font-bold text-sky-text mb-6">
+                 About Me
+               </h3>
+               <div className="space-y-4 mb-8">
+                 <p className="text-lg lg:text-xl text-sky-text-secondary leading-relaxed opacity-90 text-justify">
+                   Enthusiastic and detail-oriented Data Analyst with ~2 years of experience in building data pipelines, automating ETL processes, and developing insightful reports.
+                 </p>
+                 <p className="text-lg lg:text-xl text-sky-text-secondary leading-relaxed opacity-90 text-justify">
+                   Proficient in Python, SQL, and relational databases, with hands-on expertise in Power BI, Power Query, and Git. Familiar with AWS and well-versed in data structures, algorithms, and database design. Fast learner with strong analytical skills and a collaborative mindset, passionate about transforming raw data into actionable insights.
+                 </p>
+               </div>
               
               {/* Action Buttons - MOVED TO RIGHT COLUMN */}
               <div className="flex flex-col sm:flex-row gap-4">

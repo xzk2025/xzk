@@ -1,10 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const settingsRef = useRef<HTMLDivElement>(null);
+  const [activeHref, setActiveHref] = useState<string>('#home');
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -39,27 +38,15 @@ const Navigation: React.FC = () => {
   }, []);
 
   const scrollToSection = (href: string) => {
+    setActiveHref(href);
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
-    setIsSettingsOpen(false);
   };
 
-  // Close settings dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (settingsRef.current && !settingsRef.current.contains(event.target as Node)) {
-        setIsSettingsOpen(false);
-      }
-    };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -104,8 +91,8 @@ const Navigation: React.FC = () => {
             </a>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -114,14 +101,17 @@ const Navigation: React.FC = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className={`transition-colors duration-300 font-medium relative group nav-link ${
+                aria-current={activeHref === item.href ? 'page' : undefined}
+                className={`transition-colors duration-300 font-medium relative group nav-link focus:outline-none ${
                   isScrolled 
                     ? 'text-sky-text hover:text-sky-accent' 
                     : 'text-sky-text hover:text-sky-accent'
                 }`}
               >
                 {item.name}
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                <span className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 ${
+                  activeHref === item.href ? 'w-full' : 'w-0 group-hover:w-full'
+                } ${
                   isScrolled 
                     ? 'bg-gradient-to-r from-sky-accent to-sky-accent-secondary' 
                     : 'bg-gradient-to-r from-sky-accent to-sky-accent-secondary'
@@ -130,39 +120,8 @@ const Navigation: React.FC = () => {
             ))}
           </div>
 
-          {/* Settings Icon */}
-          <div className="flex items-center space-x-4" ref={settingsRef}>
-            <button
-              onClick={() => setIsSettingsOpen(!isSettingsOpen)}
-              className={`p-2 rounded-lg transition-all duration-300 group nav-button ${
-                isScrolled 
-                  ? 'text-sky-text hover:text-sky-accent hover:bg-sky-accent/10' 
-                  : 'text-sky-text hover:text-sky-accent hover:bg-sky-accent/10'
-              }`}
-              aria-label="Settings"
-            >
-              <svg 
-                className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" 
-                />
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" 
-                />
-              </svg>
-            </button>
-
-            {/* Mobile Menu Button */}
+          {/* Mobile Menu Button */}
+          <div className="flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`md:hidden p-2 rounded-lg transition-all duration-300 nav-button ${
@@ -219,25 +178,7 @@ const Navigation: React.FC = () => {
           </div>
         )}
 
-        {/* Settings Dropdown */}
-        {isSettingsOpen && (
-          <div className="absolute top-full right-4 mt-2 w-48 glass-effect-dropdown rounded-xl shadow-2xl border border-white/20">
-            <div className="py-2">
-              <div className="px-4 py-2 text-sm text-sky-text-muted border-b border-white/10">
-                Settings
-              </div>
-              <button className="w-full text-left px-4 py-2 text-sm text-sky-text-secondary hover:text-sky-text hover:bg-white/10 transition-colors duration-300 nav-link">
-                Theme
-              </button>
-              <button className="w-full text-left px-4 py-2 text-sm text-sky-text-secondary hover:text-sky-text hover:bg-white/10 transition-colors duration-300 nav-link">
-                Language
-              </button>
-              <button className="w-full text-left px-4 py-2 text-sm text-sky-text-secondary hover:text-sky-text hover:bg-white/10 transition-colors duration-300 nav-link">
-                Accessibility
-              </button>
-            </div>
-          </div>
-        )}
+
       </div>
     </nav>
   );

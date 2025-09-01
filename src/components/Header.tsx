@@ -51,6 +51,8 @@ const Header: React.FC = () => {
                   <div className="hidden absolute inset-0 w-full h-full bg-gradient-to-br from-sky-accent via-purple-500 to-indigo-500 rounded-lg flex items-center justify-center text-4xl lg:text-6xl font-black text-white">
                     KM
                   </div>
+                  
+
                 </div>
               </div>
               
@@ -61,15 +63,21 @@ const Header: React.FC = () => {
                     Khin Myo Hsak
                   </span>
                 </h1>
-                <h2 className="text-base lg:text-lg text-sky-text-secondary font-light tracking-wide">
+                <h2 className="text-base lg:text-lg text-sky-text-secondary font-light tracking-wide mb-2">
                   <span className="text-sky-text-secondary">Billing IT Analyst</span>
                   <br />
                   <span className="text-xl lg:text-2xl font-semibold bg-gradient-to-r from-sky-accent to-sky-accent-secondary bg-clip-text text-transparent">
                     Deputy Manager
                   </span>
                   <br />
-                  <span className="text-sky-text-secondary">Billing IT Department</span>
+                  {/* <span className="text-sky-text-secondary">Billing IT Department</span> */}
                 </h2>
+                {/* Subtle Status Line (Option A) */}
+                <div className="flex items-center justify-center lg:justify-start gap-2 text-sky-text-muted text-sm mb-4">
+                  <span className="flex items-center gap-1"><span className="text-green-500 text-base">●</span>Available for hire</span>
+                  <span className="mx-1">·</span>
+                  <span className="flex items-center gap-1"><span className="text-sky-accent text-base">🌍</span>Remote/Hybrid Available</span>
+                </div>
               </div>
               
               {/* Social Links */}
@@ -103,10 +111,13 @@ const Header: React.FC = () => {
                </h3>
                <div className="space-y-4 mb-8">
                  <p className="text-lg lg:text-xl text-sky-text-secondary leading-relaxed opacity-90 text-justify">
-                   Enthusiastic and detail-oriented Data Analyst with ~2 years of experience in building data pipelines, automating ETL processes, and developing insightful reports.
+                   As a detail-oriented Data Analyst with over 2 years of experience, I excel at transforming raw data into actionable insights. My expertise lies in building data pipelines, automating ETL processes, and creating impactful reports.
                  </p>
                  <p className="text-lg lg:text-xl text-sky-text-secondary leading-relaxed opacity-90 text-justify">
-                   Proficient in Python, SQL, and relational databases, with hands-on expertise in Power BI, Power Query, and Git. Familiar with AWS and well-versed in data structures, algorithms, and database design. Fast learner with strong analytical skills and a collaborative mindset, passionate about transforming raw data into actionable insights.
+                   I'm proficient in Python, <span className="font-semibold bg-gradient-to-r from-sky-accent via-purple-600 to-indigo-600 bg-clip-text text-transparent">SQL</span>, and relational <span className="font-semibold bg-gradient-to-r from-sky-accent via-purple-600 to-indigo-600 bg-clip-text text-transparent">databases</span>, with hands-on skills in <span className="font-semibold bg-gradient-to-r from-sky-accent via-purple-600 to-indigo-600 bg-clip-text text-transparent">Power BI</span>, <span className="font-semibold bg-gradient-to-r from-sky-accent via-purple-600 to-indigo-600 bg-clip-text text-transparent">Power Query</span>, and Git. I'm a fast learner with a passion for problem-solving and a strong desire to master new technologies. My collaborative mindset and ability to work under pressure ensure I can deliver results in any dynamic environment.
+                 </p>
+                 <p className="text-lg lg:text-xl text-sky-text-secondary leading-relaxed opacity-90 text-justify">
+                   I'm currently open to new opportunities where I can apply my skills and continue to grow as a professional.
                  </p>
                </div>
               
@@ -114,25 +125,24 @@ const Header: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={handleDownloadResume}
-                  className="group relative px-8 py-4 bg-sky-accent text-white rounded-lg font-semibold overflow-hidden transition-all duration-300 hover:bg-sky-accent/90"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-sky-accent to-sky-accent-secondary text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-sky-accent/40 active:scale-[0.99]"
+                  aria-label="Download Resume"
                 >
-                  <span className="relative z-10 flex items-center">
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                    </svg>
-                    Download Resume
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-sky-accent to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                  <span>Download Resume</span>
                 </button>
                 
                 <button
                   onClick={scrollToContact}
-                  className="px-8 py-4 border-2 border-sky-accent text-sky-accent rounded-lg font-semibold hover:bg-sky-accent hover:text-white transition-all duration-300 flex items-center justify-center"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-sky-accent/40 text-sky-accent bg-white/70 backdrop-blur-sm font-semibold shadow-sm hover:bg-sky-accent/10 hover:shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-sky-accent/30 active:scale-[0.99]"
+                  aria-label="Get in Touch"
                 >
-                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                   </svg>
-                  Get in Touch
+                  <span>Get in Touch</span>
                 </button>
               </div>
             </div>

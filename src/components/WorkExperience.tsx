@@ -93,7 +93,17 @@ const WorkExperience: React.FC = () => {
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                     <div className="mb-4 lg:mb-0">
                       <h3 className="text-2xl font-bold text-sky-text mb-2 group-hover:text-sky-accent transition-colors duration-300">
-                        {experience.position}
+                        {index === 0 ? (
+                          <>
+                            <span className="text-sky-text">Billing IT Analyst</span>
+                            <span>, </span>
+                            <span className="bg-gradient-to-r from-sky-accent to-sky-accent-secondary bg-clip-text text-transparent">Deputy Manager</span>
+                            {/* <span>, </span> */}
+                            {/* <span className="text-sky-text">Billing IT Department</span> */}
+                          </>
+                        ) : (
+                          experience.position
+                        )}
                       </h3>
                       <p className="text-xl gradient-text-secondary font-semibold mb-1">
                         {experience.company}

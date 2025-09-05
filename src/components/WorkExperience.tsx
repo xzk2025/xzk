@@ -19,12 +19,15 @@ const WorkExperience: React.FC = () => {
       duration: "Aug 2025 - Current",
       location: "Myanmar",
       description: [
-        "Support sim operation",
-        "Handle operation requirements, functional issues, system issue, customer complaint",
-        "Provide the data, information, reports",
-        "Support testing process for issues or need"
+        "Manage and support Oracle billing databases (SQL queries, data extraction, troubleshooting).",
+        "Automate billing and reporting processes using VBA macros.",
+        "Build and maintain Advanced Excel models (pivot tables, dashboards, forecasting).",
+        "Reconcile invoices, payments, and customer accounts to ensure billing accuracy.",
+        "Conduct root-cause analysis of billing discrepancies and recommend solutions.",
+        "Prepare regular and ad-hoc billing reports for finance and management.",
+        "Collaborate with IT/Finance teams on billing system upgrades and integrations."
       ],
-      technologies: ["IT Support", "System Operations", "Customer Support", "Testing", "Reporting"]
+      technologies: ["Billing", "System Operations", "Power BI", "Data Analysis", "VBA", "SQL"]
     },
     {
       id: 2,
